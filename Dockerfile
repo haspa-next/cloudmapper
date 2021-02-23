@@ -23,4 +23,4 @@ RUN python cloudmapper.py report --account hn
 RUN python cloudmapper.py prepare --account hn
 
 #replace this with service start
-RUN bash
+ENTRYPOINT ./run.sh
