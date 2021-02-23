@@ -2,7 +2,7 @@
 	"family": "cloudmapper-%ENVIRONMENT%",
 	"containerDefinitions": [
 		{
-			"image": "255382753382.dkr.ecr.eu-central-1.amazonaws.com/cloudmapper-service:%IMAGE_VERSION%",
+			"image": "255382753382.dkr.ecr.eu-central-1.amazonaws.com/cloudmapper:%IMAGE_VERSION%",
 			"name": "cloudmapper-%ENVIRONMENT%",
 			"cpu": 50,
 			"memoryReservation": 256,
@@ -33,5 +33,5 @@
 			]
 		}
 	],
-	"taskRoleArn": "arn:aws:iam::255382753382:role/credentials-web-xo-%ENVIRONMENT%"
+	"taskRoleArn": "arn:aws:iam::255382753382:role/credentials-cloudmapper-%ENVIRONMENT%"
 }
