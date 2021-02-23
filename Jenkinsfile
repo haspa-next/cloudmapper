@@ -1,9 +1,6 @@
 pipeline {
     agent {
-        dockerfile {
-            filename 'DockerfileJenkins'
-            args '-v /opt/:/opt/ -v /var/run/docker.sock:/var/run/docker.sock'
-        }
+        any
     }
     stages {
         stage('build docker') {
