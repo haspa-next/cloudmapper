@@ -7,9 +7,9 @@ pipeline {
                 script {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'ecr-eu-jenkins', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                         docker.withRegistry("https://255382753382.dkr.ecr.eu-central-1.amazonaws.com", "ecr:eu-central-1:ecr-eu-jenkins") {
-                            docker.build('cloudmapper-service', '--build-arg AWS_ACCESS_KEY_ID --build-arg AWS_SECRET_ACCESS_KEY .')
-                            docker.image("cloudmapper-service").push("v_"+env.BUILD_NUMBER)
-                            docker.image("cloudmapper-service").push("latest")
+                            docker.build('cloudmapper', '--build-arg AWS_ACCESS_KEY_ID --build-arg AWS_SECRET_ACCESS_KEY .')
+                            docker.image("cloudmapper").push("v_"+env.BUILD_NUMBER)
+                            docker.image("cloudmapper").push("latest")
                         }
                     }
                 }
